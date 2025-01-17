@@ -1,4 +1,5 @@
 ﻿using GestaoGuincho.Application.Interfaces;
+using GestaoGuincho.Application.Mappings;
 using GestaoGuincho.Application.Services;
 using GestaoGuincho.Domain.Interfaces;
 using GestaoGuincho.Infra.Data.Context;
@@ -29,6 +30,8 @@ namespace GestaoGuincho.Infra.IoC
 
             services.AddScoped<IParkingService, ParkingServices>();
             services.AddScoped<IVehicleService, VehicleService>();
+
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
         }

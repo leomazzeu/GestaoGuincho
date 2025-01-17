@@ -10,6 +10,7 @@ namespace GestaoGuincho.Application.DTOs
 {
     public class VehicleDTO
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "É obrigatório informar a placa do veículo.")]
         [RegularExpression(@"^[A-Z]{3}-\d{4}$|^[A-Z]{3}\d[A-Z]\d{2}$", ErrorMessage = "A placa deve estar no formato ABC-1234 ou ABC1D23.")]
         public required string Plate { get; set; }

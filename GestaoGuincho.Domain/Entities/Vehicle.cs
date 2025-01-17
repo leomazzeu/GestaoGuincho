@@ -16,6 +16,8 @@ namespace GestaoGuincho.Domain.Entities
         public DateTime EntryDate { get; private set; }
         public DateTime DepartureDate { get; private set; }
         public VehicleType Type { get; private set; }
+        public int ParkingId { get; set; }
+        public Parking Parking { get; set; }
 
         public Vehicle(string plate, DateTime entryDate, bool realLicensePlate = true)
         {

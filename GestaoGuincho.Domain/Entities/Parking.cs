@@ -12,6 +12,8 @@ namespace GestaoGuincho.Domain.Entities
         public string City { get; private set; }
         public int VehiclesCollected { get; private set; }
         public int ReleasedVehicles { get; private set; }
+        public ICollection<Vehicle> Vehicles { get; set; }
+
 
         public Parking(string city)
         {

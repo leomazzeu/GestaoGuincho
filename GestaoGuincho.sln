@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoGuincho.Domain", "Ges
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoGuincho.Infra.Data", "GestaoGuincho.Infra.Data\GestaoGuincho.Infra.Data.csproj", "{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoGuincho.Application", "GestaoGuincho.Application\GestaoGuincho.Application.csproj", "{00472549-DFA1-4324-B54E-FBB5E8801CE6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00472549-DFA1-4324-B54E-FBB5E8801CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00472549-DFA1-4324-B54E-FBB5E8801CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00472549-DFA1-4324-B54E-FBB5E8801CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00472549-DFA1-4324-B54E-FBB5E8801CE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

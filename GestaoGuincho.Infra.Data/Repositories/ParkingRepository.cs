@@ -1,5 +1,7 @@
 ﻿using GestaoGuincho.Domain.Entities;
 using GestaoGuincho.Domain.Interfaces;
+using GestaoGuincho.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +12,41 @@ namespace GestaoGuincho.Infra.Data.Repositories
 {
     public class ParkingRepository : IParkingRepository
     {
-        public Task<Parking> CreateAsync(Parking entity)
+        private readonly AppDbContext _context;
+
+        public ParkingRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<IEnumerable<Parking>> GetAllAsync()
+        {
+            return await _context.Parkings.ToListAsync();
         }
 
-        public Task<Parking> DeleteAsync(Parking entity)
+        public async Task<Parking> GetByIdAsync(int? id)
         {
-            throw new NotImplementedException();
+            return await _context.Parkings.FindAsync(id);
         }
 
-        public Task<IEnumerable<Parking>> GetAllAsync()
+        public async Task<Parking> CreateAsync(Parking parking)
         {
-            throw new NotImplementedException();
+            await _context.Parkings.AddAsync(parking);
+            await _context.SaveChangesAsync();
+            return parking;
         }
 
-        public Task<Parking> GetByIdAsync(int id)
+        public async Task<Parking> DeleteAsync(Parking parking)
         {
-            throw new NotImplementedException();
+            _context.Parkings.Remove(parking);
+            await _context.SaveChangesAsync();
+            return parking;
         }
 
-        public Task<Parking> UpdateAsync(Parking entity)
+        public async Task<Parking> UpdateAsync(Parking parking)
         {
-            throw new NotImplementedException();
+            _context.Parkings.Update(parking);
+            await _context.SaveChangesAsync();
+            return parking;
         }
     }
 }

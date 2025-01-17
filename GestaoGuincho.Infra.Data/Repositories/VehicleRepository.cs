@@ -1,5 +1,7 @@
 ﻿using GestaoGuincho.Domain.Entities;
 using GestaoGuincho.Domain.Interfaces;
+using GestaoGuincho.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +12,41 @@ namespace GestaoGuincho.Infra.Data.Repositories
 {
     public class VehicleRepository : IVehicleRepository
     {
-        public Task<Vehicle> CreateAsync(Vehicle entity)
+        private readonly AppDbContext _context;
+
+        public VehicleRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Vehicle> DeleteAsync(Vehicle entity)
+        public async Task<IEnumerable<Vehicle>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Vehicles.AsNoTracking().ToListAsync();
         }
 
-        public Task<IEnumerable<Vehicle>> GetAllAsync()
+        public async Task<Vehicle> GetByIdAsync(int? id)
         {
-            throw new NotImplementedException();
+            return await _context.Vehicles.FindAsync(id);
+        }
+        public async Task<Vehicle> CreateAsync(Vehicle vehicle)
+        {
+            await _context.AddAsync(vehicle);
+            await _context.SaveChangesAsync();
+            return vehicle;
         }
 
-        public Task<Vehicle> GetByIdAsync(int id)
+        public async Task<Vehicle> DeleteAsync(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _context.Remove(vehicle);
+            await _context.SaveChangesAsync();
+            return vehicle;
         }
 
-        public Task<Vehicle> UpdateAsync(Vehicle entity)
+        public async Task<Vehicle> UpdateAsync(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _context.Remove(vehicle);
+            await _context.SaveChangesAsync();
+            return vehicle;
         }
     }
 }

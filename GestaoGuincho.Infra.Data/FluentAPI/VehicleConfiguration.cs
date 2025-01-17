@@ -14,7 +14,7 @@ namespace GestaoGuincho.Infra.Data.FluentAPI
         public void Configure(EntityTypeBuilder<Vehicle> builder)
         {
             builder.HasKey(v => v.Id);
-            builder.Property(v => v.Plate).HasMaxLength(7).IsRequired();
+            builder.Property(v => v.Plate).HasMaxLength(8).IsRequired();
             builder.Property(v => v.Type).IsRequired();
             builder.Property(v => v.EntryDate).IsRequired();
         }

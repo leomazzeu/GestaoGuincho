@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoGuincho.Domain", "GestaoGuincho.Domain\GestaoGuincho.Domain.csproj", "{D879423F-EF28-4559-A3C6-0978F0C4B2DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoGuincho.Application", "GestaoGuincho.Application\GestaoGuincho.Application.csproj", "{E94A1E75-23E4-43F2-B109-5D8F83E30A9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoGuincho.Infra.Data", "GestaoGuincho.Infra.Data\GestaoGuincho.Infra.Data.csproj", "{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D879423F-EF28-4559-A3C6-0978F0C4B2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D879423F-EF28-4559-A3C6-0978F0C4B2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D879423F-EF28-4559-A3C6-0978F0C4B2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E94A1E75-23E4-43F2-B109-5D8F83E30A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94A1E75-23E4-43F2-B109-5D8F83E30A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E94A1E75-23E4-43F2-B109-5D8F83E30A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E94A1E75-23E4-43F2-B109-5D8F83E30A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4D8BA6-CCAB-4E76-A0DF-063BC83127B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

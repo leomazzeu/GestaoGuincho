@@ -11,8 +11,8 @@ namespace GestaoGuincho.Application.Interfaces
     {
         Task<IEnumerable<ParkingDTO>> GetAllAsync();
         Task<ParkingDTO> GetByIdAsync(int id);
-        Task<ParkingDTO> CreateAsync(ParkingDTO parking);
-        Task<ParkingDTO> UpdateAsync(ParkingDTO parking);
-        Task<ParkingDTO> DeleteAsync(ParkingDTO parking);
+        Task CreateAsync(ParkingDTO parkingDTO);
+        Task UpdateAsync(ParkingDTO parkingDTO);
+        Task DeleteAsync(ParkingDTO parkingDTO);
     }
 }

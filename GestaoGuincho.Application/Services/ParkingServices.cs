@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GestaoGuincho.Application.DTOs;
 using GestaoGuincho.Application.Interfaces;
+using GestaoGuincho.Domain.Entities;
 using GestaoGuincho.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,29 +22,34 @@ namespace GestaoGuincho.Application.Services
             _mapper = mapper;
         }
 
-        public Task<ParkingDTO> CreateAsync(ParkingDTO parking)
+        public async Task<IEnumerable<ParkingDTO>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var parkings = await _parkingRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<ParkingDTO>>(parkings);
         }
 
-        public Task<ParkingDTO> DeleteAsync(ParkingDTO parking)
+        public async Task<ParkingDTO> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var parking = await _parkingRepository.GetByIdAsync(id);
+            return _mapper.Map<ParkingDTO>(parking);
         }
 
-        public Task<IEnumerable<ParkingDTO>> GetAllAsync()
+        public async Task CreateAsync(ParkingDTO parkingDTO)
         {
-            throw new NotImplementedException();
+            var parking = _mapper.Map<Parking>(parkingDTO);
+            await _parkingRepository.CreateAsync(parking);
         }
 
-        public Task<ParkingDTO> GetByIdAsync(int id)
+        public async Task DeleteAsync(ParkingDTO parkingDTO)
         {
-            throw new NotImplementedException();
+            var parking = _mapper.Map<Parking>(parkingDTO);
+            await _parkingRepository.DeleteAsync(parking);
         }
 
-        public Task<ParkingDTO> UpdateAsync(ParkingDTO parking)
+        public async Task UpdateAsync(ParkingDTO parkingDTO)
         {
-            throw new NotImplementedException();
+            var parking = _mapper.Map<Parking>(parkingDTO);
+            await _parkingRepository.UpdateAsync(parking);
         }
     }
 }

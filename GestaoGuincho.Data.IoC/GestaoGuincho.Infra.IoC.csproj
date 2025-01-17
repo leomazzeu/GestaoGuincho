@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GestaoGuincho.Application\GestaoGuincho.Application.csproj" />
     <ProjectReference Include="..\GestaoGuincho.Domain\GestaoGuincho.Domain.csproj" />
     <ProjectReference Include="..\GestaoGuincho.Infra.Data\GestaoGuincho.Infra.Data.csproj" />
   </ItemGroup>

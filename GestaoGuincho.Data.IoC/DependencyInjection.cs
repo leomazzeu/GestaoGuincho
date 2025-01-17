@@ -1,4 +1,8 @@
-﻿using GestaoGuincho.Infra.Data.Context;
+﻿using GestaoGuincho.Application.Interfaces;
+using GestaoGuincho.Application.Services;
+using GestaoGuincho.Domain.Interfaces;
+using GestaoGuincho.Infra.Data.Context;
+using GestaoGuincho.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +23,12 @@ namespace GestaoGuincho.Infra.IoC
                 b => b.MigrationsAssembly(typeof(AppDbContext)
                 .Assembly.FullName)));
 
+
+            services.AddScoped<IParkingRepository, ParkingRepository>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+
+            services.AddScoped<IParkingService, ParkingServices>();
+            services.AddScoped<IVehicleService, VehicleService>();
 
             return services;
         }
